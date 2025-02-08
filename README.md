@@ -3,6 +3,7 @@
 fizz-poc是一个被动流量漏洞扫描器，支持XRAY(XPOC)的POC文件，能自动识别.pcap文件的流量漏洞，并生成报告。
 
 ## 使用方法
+```
 Usage: fizz-poc [-hV] [--https] [--cert=<certFile>] [-d=<pocDir>]
                 [--key=<keyFile>] [-o=<reportFile>] -p=<pcapFile>
                 [--report-format=<reportFormat>] [--threads=<threads>]
@@ -20,6 +21,7 @@ POC扫描工具
       --threads=<threads>   线程数 (默认: CPU核心数)
       --timeout=<timeout>   超时时间(分钟) (默认: 60)
   -V, --version             Print version information and exit.
+```
 
 ## 依赖
 - JDK 8
